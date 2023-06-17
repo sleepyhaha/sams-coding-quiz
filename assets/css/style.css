@@ -1,7 +1,46 @@
 * {
   width: 100%;
+  margin: 0%;
 }
 
 header {
   display: flex;
+  align-items: center;
+}
+
+header a {
+  text-align: left;
+}
+
+.game-timer {
+  text-align: right;
+  display: inline-flex;
+}
+
+.time-count {
+  width: auto;
+  padding-left: 1%;
+}
+
+body {
+  text-align: center;
+}
+
+.main-section {
+  margin-top: 10%;
+}
+
+.main-section h3 {
+  margin-top: 5%;
+}
+
+.buttons {
+  background-color: mediumslateblue;
+  border: none;
+  color: black;
+  width: 10%;
+  padding: 15px 36px;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
 }
