@@ -31,12 +31,13 @@ body {
   margin-top: 10%;
 }
 
-.main-section h3 {
-  margin-top: 5%;
+.sub-heading {
+  width: 80%;
+  margin: 5% auto;
 }
 
 .buttons {
-  margin-top: 10%;
+  margin-top: 8%;
   background-color: mediumslateblue;
   border: none;
   color: black;
