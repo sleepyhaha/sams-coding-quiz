@@ -27,8 +27,9 @@ function startGame() {
       submitScore.appendChild(initials).appendChild(submitButton);
       subHeading.appendChild(submitScore);
 
-      submitScore.addEventListener("submit", function () {
-        window.location.href = "leaderboard.html";
+      submitScore.addEventListener("submit", function (event) {
+        event.preventDefault();
+        window.location.href = "./assets/html/leaderboard.html";
       });
     }
   }, 1000);
