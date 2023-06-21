@@ -80,6 +80,7 @@ form {
 }
 
 .answer-section button {
+  display: none;
   width: 100%;
 }
 
