@@ -2,7 +2,8 @@ let buttons = document.querySelector(".buttons");
 let timerCount = document.querySelector(".time-count");
 let mainHeading = document.querySelector(".main-heading");
 let subHeading = document.querySelector(".sub-heading");
-let secondsLeft = 5;
+let answerSection = document.querySelector(".answer-section");
+let secondsLeft = 20;
 let score = 0;
 
 function startGame() {
@@ -13,6 +14,7 @@ function startGame() {
     if (secondsLeft === 0) {
       clearInterval(timerInterval);
       mainHeading.textContent = "Game Over";
+      answerSection.remove();
 
       subHeading.innerHTML = "Enter your initials";
       let submitScore = document.createElement("form");
@@ -32,35 +34,29 @@ function startGame() {
       });
     }
   }, 1000);
+  question1();
 }
 
 buttons.addEventListener("click", function () {
   subHeading.innerHTML = "";
   buttons.remove();
   startGame();
-  question1();
-  // let newAnswer = document.createElement("li");
-  // let newAnswer1 = document.body.appendChild(newAnswer);
-  // newAnswer1.textContent = "Answer1";
-
-  // let answerArray = ["answer1", "answer2", "answer3", "answer4"];
-  // for (let i = 0; i < answerArray.length; i++) {
-  //   const answer = answer[i];
-
-  //   let newAnswer = document.createElement("button");
-  //   newAnswer.textContent = answer[i];
-
-  //   document.body.appendChild(newAnswer);
 });
-// });
 
 function question1() {
-  let answerSection = document.querySelector(".answer-section");
   mainHeading.textContent = "Question 1";
+
   let answer1 = document.createElement("button");
+  answer1.setAttribute("data-value", "wrong");
+
   let answer2 = document.createElement("button");
+  answer2.setAttribute("data-value", "right");
+
   let answer3 = document.createElement("button");
+  answer3.setAttribute("data-value", "wrong");
+
   let answer4 = document.createElement("button");
+  answer4.setAttribute("data-value", "wrong");
 
   answer1.textContent = "Wrong";
   answer2.textContent = "Right";
@@ -69,3 +65,15 @@ function question1() {
 
   answerSection.append(answer1, answer2, answer3, answer4);
 }
+
+answerSection.addEventListener("click", function (event) {
+  let element = event.target;
+  let answerData = element.getAttribute("data-value");
+
+  if (element.matches("button") && answerData === "right") {
+    score += 10;
+  }
+  if (element.matches("button") && answerData === "wrong") {
+    secondsLeft -= 10;
+  }
+});

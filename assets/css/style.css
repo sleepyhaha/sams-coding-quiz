@@ -82,3 +82,7 @@ form {
 .answer-section button {
   width: 100%;
 }
+
+.answer-section button:hover {
+  cursor: pointer;
+}
