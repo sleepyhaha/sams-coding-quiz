@@ -8,6 +8,8 @@ let secondsLeft = 90;
 let score = 0;
 let questionIndex = 0;
 
+// function starts timer and initiates first question
+
 function startGame() {
   let timerInterval = setInterval(function () {
     secondsLeft--;
@@ -20,6 +22,8 @@ function startGame() {
   }, 1000);
   question1();
 }
+
+// runs the game over screen once conditions are met, and allows players to enter in initials and submit high score
 
 function gameOver() {
   mainHeading.textContent = "Game Over";
@@ -43,11 +47,17 @@ function gameOver() {
   });
 }
 
+// click event listener for start game button
+
 buttons.addEventListener("click", function () {
   subHeading.innerHTML = "";
   buttons.remove();
   startGame();
 });
+
+// code obtained and refactored from https://stackoverflow.com/questions/72588081/working-on-a-javascript-quiz-app-and-having-an-issue-dynamically-generating-ques
+
+// sets the question and answers to values from array and changes answer buttons from display:none state to visible
 
 function question1() {
   mainHeading.textContent = questions[questionIndex].question;
@@ -72,9 +82,9 @@ function question1() {
   answer2.innerHTML = questions[questionIndex].choices[1];
   answer3.innerHTML = questions[questionIndex].choices[2];
   answer4.innerHTML = questions[questionIndex].choices[3];
-
-  // answerSection.append(answer1, answer2, answer3, answer4);
 }
+
+// iterates questions and answers from an array defined below. clicking correct answer adds 10 to score and shows question and answers from next index in array. subtracts 10 seconds if answer is incorrect. sets timer to 0, triggering game over if end of array is reached
 
 answerSection.addEventListener("click", function (event) {
   let element = event.target;
