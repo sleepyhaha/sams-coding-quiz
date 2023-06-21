@@ -69,3 +69,16 @@ form {
   height: 5%;
   margin: 5% auto;
 }
+
+.answer-section {
+  padding: 5% 0;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: auto;
+  align-items: center;
+}
+
+.answer-section button {
+  width: 100%;
+}

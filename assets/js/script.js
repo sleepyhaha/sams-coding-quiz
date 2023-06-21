@@ -2,7 +2,6 @@ let buttons = document.querySelector(".buttons");
 let timerCount = document.querySelector(".time-count");
 let mainHeading = document.querySelector(".main-heading");
 let subHeading = document.querySelector(".sub-heading");
-let answerSection = document.querySelector(".answer-section");
 let secondsLeft = 5;
 let score = 0;
 
@@ -36,30 +35,37 @@ function startGame() {
 }
 
 buttons.addEventListener("click", function () {
-  mainHeading.textContent = "Question text";
   subHeading.innerHTML = "";
   buttons.remove();
   startGame();
-
+  question1();
   // let newAnswer = document.createElement("li");
   // let newAnswer1 = document.body.appendChild(newAnswer);
   // newAnswer1.textContent = "Answer1";
 
-  let answerArray = ["answer1", "answer2", "answer3", "answer4"];
-  for (let i = 0; i < answerArray.length; i++) {
-    const answer = answer[i];
+  // let answerArray = ["answer1", "answer2", "answer3", "answer4"];
+  // for (let i = 0; i < answerArray.length; i++) {
+  //   const answer = answer[i];
 
-    let newAnswer = document.createElement("button");
-    newAnswer.textContent = answer[i];
+  //   let newAnswer = document.createElement("button");
+  //   newAnswer.textContent = answer[i];
 
-    document.body.appendChild(newAnswer);
-  }
+  //   document.body.appendChild(newAnswer);
 });
+// });
 
-// let gameOver = function () {
-//   if (secondsLeft === 0) {
-//     mainHeading.textContent = "Game Over";
-//     subHeading.innerHTML = " ";
-//     subHeading.createElement("form");
-//   }
-// };
+function question1() {
+  let answerSection = document.querySelector(".answer-section");
+  mainHeading.textContent = "Question 1";
+  let answer1 = document.createElement("button");
+  let answer2 = document.createElement("button");
+  let answer3 = document.createElement("button");
+  let answer4 = document.createElement("button");
+
+  answer1.textContent = "Wrong";
+  answer2.textContent = "Right";
+  answer3.textContent = "Wrong";
+  answer4.textContent = "Wrong";
+
+  answerSection.append(answer1, answer2, answer3, answer4);
+}
