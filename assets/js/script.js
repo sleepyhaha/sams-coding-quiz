@@ -2,6 +2,7 @@ let buttons = document.querySelector(".buttons");
 let timerCount = document.querySelector(".time-count");
 let mainHeading = document.querySelector(".main-heading");
 let subHeading = document.querySelector(".sub-heading");
+let answerSection = document.querySelector(".answer-section");
 let secondsLeft = 5;
 let score = 0;
 
@@ -36,7 +37,7 @@ function startGame() {
 buttons.addEventListener("click", function () {
   mainHeading.textContent = "Question text";
   subHeading.innerHTML = "";
-  buttons.innerHTML = "";
+  buttons.remove();
   startGame();
 
   // let newAnswer = document.createElement("li");
