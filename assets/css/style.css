@@ -31,12 +31,13 @@ body {
   margin-top: 10%;
 }
 
-.main-section h3 {
-  margin-top: 5%;
+.sub-heading {
+  width: 80%;
+  margin: 5% auto;
 }
 
 .buttons {
-  margin-top: 10%;
+  margin-top: 8%;
   background-color: mediumslateblue;
   border: none;
   color: black;
@@ -49,4 +50,44 @@ body {
 
 .buttons:hover {
   cursor: pointer;
+}
+
+button {
+  margin-top: 8%;
+  background-color: mediumslateblue;
+  border: none;
+  color: black;
+  width: 10%;
+  padding: 15px 36px;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+form {
+  width: 40%;
+  height: 5%;
+  margin: 5% auto;
+}
+
+.answer-section {
+  padding: 5% 0;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: auto;
+  align-items: center;
+}
+
+.answer-section button {
+  display: none;
+  width: 100%;
+}
+
+.answer-section button:hover {
+  cursor: pointer;
+}
+
+.leaderboard {
+  margin-top: 10%;
 }
