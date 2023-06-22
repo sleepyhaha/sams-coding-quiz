@@ -4,7 +4,7 @@ let mainHeading = document.querySelector(".main-heading");
 let subHeading = document.querySelector(".sub-heading");
 let answerSection = document.querySelector(".answer-section");
 let timerInterval;
-let secondsLeft = 90;
+let secondsLeft = 50;
 let score = 0;
 let questionIndex = 0;
 let nameHighScore = [];
@@ -129,23 +129,29 @@ answerSection.addEventListener("click", function (event) {
 
 const questions = [
   {
-    question: "Question 1",
-    choices: ["wrong", "right", "wrong", "wrong"],
-    answer: "right",
+    question: "Question 1: How do you select a HTML class in Javascript?",
+    choices: [".getItem", ".querySelector", "setAttribute", "function"],
+    answer: ".querySelector",
   },
   {
-    question: "Question 2",
-    choices: ["right", "wrong", "wrong", "wrong"],
-    answer: "right",
+    question:
+      "Question 2: What is the command to push local changes to the repo?",
+    choices: ["git push", "git pull", "git checkout", "git lost"],
+    answer: "git push",
   },
   {
-    question: "Question 3",
-    choices: ["wrong", "wrong", "right", "wrong"],
-    answer: "right",
+    question: "Question 3: What is the attribute to add a link in HTML?",
+    choices: ["link", "zelda", "href", "a"],
+    answer: "href",
   },
   {
-    question: "Question 4",
-    choices: ["wrong", "wrong", "wrong", "right"],
-    answer: "right",
+    question: "Question 4: Why does this give me a headache sometimes?",
+    choices: [
+      "not enough googling",
+      "think too much",
+      "too many tabs open",
+      "is hard",
+    ],
+    answer: "is hard",
   },
 ];
