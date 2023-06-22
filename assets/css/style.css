@@ -87,3 +87,7 @@ form {
 .answer-section button:hover {
   cursor: pointer;
 }
+
+.leaderboard {
+  margin-top: 10%;
+}

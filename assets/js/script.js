@@ -47,15 +47,23 @@ function gameOver() {
     event.preventDefault();
     nameHighScore.push(initials.value);
     valueHighScore.push(score);
-    window.localStorage.setItem("nameHighScore", JSON.stringify(nameHighScore));
-    window.localStorage.setItem(
-      "valueHighScore",
-      JSON.stringify(valueHighScore)
-    );
-    // window.location.href = "./assets/html/leaderboard.html";
+    localStorage.setItem("nameHighScore", JSON.stringify(nameHighScore));
+    localStorage.setItem("valueHighScore", JSON.stringify(valueHighScore));
+    window.location.href = "./leaderboard.html";
+    highScores();
   });
 }
 
+// this is meant to render high scores from local storage to
+
+function highScores() {
+  let getHighScoreName = JSON.parse(localStorage.getItem(nameHighScore));
+  let getHighScoreValue = JSON.parse(localStorage.getItem(valueHighScore));
+  let newHighScore = document.createElement("li");
+  document.querySelector("#high-scores").append(newHighScore);
+  getHighScoreName;
+}
+6;
 // click event listener for start game button
 
 buttons.addEventListener("click", function () {
