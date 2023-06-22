@@ -3,7 +3,7 @@ let timerCount = document.querySelector(".time-count");
 let mainHeading = document.querySelector(".main-heading");
 let subHeading = document.querySelector(".sub-heading");
 let answerSection = document.querySelector(".answer-section");
-
+let timerInterval;
 let secondsLeft = 90;
 let score = 0;
 let questionIndex = 0;
@@ -11,7 +11,7 @@ let questionIndex = 0;
 // function starts timer and initiates first question
 
 function startGame() {
-  let timerInterval = setInterval(function () {
+  timerInterval = setInterval(function () {
     secondsLeft--;
     timerCount.textContent = secondsLeft;
 
@@ -26,10 +26,10 @@ function startGame() {
 // runs the game over screen once conditions are met, and allows players to enter in initials and submit high score
 
 function gameOver() {
-  mainHeading.textContent = "Game Over";
   answerSection.remove();
-
-  subHeading.innerHTML = "Enter your initials";
+  mainHeading.textContent = "Game Over";
+  subHeading.innerHTML =
+    "Your Score is: " + score + "<br/>" + "Enter your initials";
   let submitScore = document.createElement("form");
 
   let initials = document.createElement("input");
@@ -103,11 +103,11 @@ answerSection.addEventListener("click", function (event) {
   ) {
     secondsLeft -= 10;
   }
-  if (questionIndex === questions.length - 1) {
+  if (questionIndex === questions.length) {
     secondsLeft = 0;
+  } else {
+    question1();
   }
-
-  question1();
 });
 
 const questions = [
