@@ -7,6 +7,8 @@ let timerInterval;
 let secondsLeft = 90;
 let score = 0;
 let questionIndex = 0;
+let nameHighScore = [];
+let valueHighScore = [];
 
 // function starts timer and initiates first question
 
@@ -43,7 +45,14 @@ function gameOver() {
 
   submitScore.addEventListener("submit", function (event) {
     event.preventDefault();
-    window.location.href = "./assets/html/leaderboard.html";
+    nameHighScore.push(initials.value);
+    valueHighScore.push(score);
+    window.localStorage.setItem("nameHighScore", JSON.stringify(nameHighScore));
+    window.localStorage.setItem(
+      "valueHighScore",
+      JSON.stringify(valueHighScore)
+    );
+    // window.location.href = "./assets/html/leaderboard.html";
   });
 }
 
